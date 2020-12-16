@@ -2,9 +2,9 @@ const puppeteer = require('puppeteer');
 const $ = require('cheerio');
 const prompt = require('prompt-sync')();
 
-const search = prompt('which stoch you want to search?');
-inputURL = `https://www.google.com/search?q=${search}+share`;
-console.log(inputURL);
+const search = prompt('which stock you want to search?');
+inputURL = `https://www.google.com/search?q=${search.replace(/\s+/g, '')}+share`;
+// console.log(inputURL);
 const url = inputURL;
 puppeteer
     .launch()
